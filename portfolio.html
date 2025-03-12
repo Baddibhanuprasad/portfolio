@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-text {
+            display: inline-block;
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const textArray = ["Web Designer", "Developer", "Freelancer"];
+            let index = 0;
+            const textElement = document.getElementById("animated-text");
+            
+            function changeText() {
+                textElement.classList.remove("animate-text");
+                void textElement.offsetWidth; 
+                textElement.textContent = textArray[index];
+                textElement.classList.add("animate-text");
+                index = (index + 1) % textArray.length;
+            }
+            
+            setInterval(changeText, 2000);
+        });
+    </script>
+</head>
+<body class="bg-black text-white">
+    
+    <!-- Navbar -->
+    <nav class="bg-black p-6 fixed w-full top-0 shadow-lg flex justify-between items-center z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">My Portfolio</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#details" class="hover:text-red-500">Home</a></li>
+                <li><a href="#skills" class="hover:text-red-500">Skills</a></li>
+                <li><a href="#education" class="hover:text-red-500">Education</a></li>
+                <li><a href="#projects" class="hover:text-red-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-red-500">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="details" class="h-screen flex items-center justify-center text-left p-10 bg-cover bg-center relative" style="background-image: url('https://res.cloudinary.com/dhjktmlhs/image/upload/v1741699951/my_photo_z0gb4z.jpg');">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative max-w-4xl text-white">
+            <h2 class="text-6xl font-bold">I am <span class="text-blue-500">[Bhanu prasad]</span></h2>
+            <p class="mt-4 text-lg"> <span id="animated-text" class="animate-text">Web Designer</span></p>
+            <p class="mt-4"> I am bhanu prasad studying the cybersecurity engineering at visakha institute of engineering and technology. i am interested in bug bounty and penatester</p>
+            <button class="mt-6 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg">About Me</button>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="p-24 text-center bg-gray-900 min-h-screen">
+        <h2 class="text-4xl font-bold text-white mb-10">Skills</h2>
+        <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg hover:scale-105 transition duration-500">
+                    <span class="text-3xl">🔷</span>
+                    <span class="text-white text-lg">HTML - Beginner</span>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg hover:scale-105 transition duration-500">
+                    <span class="text-3xl">🎨</span>
+                    <span class="text-white text-lg">CSS - Beginner</span>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg hover:scale-105 transition duration-500">
+                    <span class="text-3xl">🚀</span>
+                    <span class="text-white text-lg">Tailwind CSS - Beginner</span>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg hover:scale-105 transition duration-500">
+                    <span class="text-3xl">💾</span>
+                    <span class="text-white text-lg">MySQL - Beginner</span>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg hover:scale-105 transition duration-500">
+                    <span class="text-3xl">💻</span>
+                    <span class="text-white text-lg">Python - Beginner</span>
+                </div>
+                <div class="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg hover:scale-105 transition duration-500">
+                    <span class="text-3xl">📈</span>
+                    <span class="text-white text-lg">Trading - Beginner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--projects section -->>
+    <section id="projects" class="p-24 text-center bg-gray-800 min-h-screen">
+        <h2 class="text-4xl font-bold text-white">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transition duration-500 bg-gray-600">
+                <h3 class="text-xl font-bold text-white">Project 1</h3>
+                <p class="text-white-400 mt-2">Description of your project.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transition duration-500">
+                <h3 class="text-xl font-bold text-white">Project 2</h3>
+                <p class="text-gray-400 mt-2">Description of your project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="p-24 text-center bg-black min-h-screen">
+        <h2 class="text-4xl font-bold text-white">Education</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <img src="https://res.cloudinary.com/dhjktmlhs/image/upload/v1741708307/school_photo_dlq1jp.jpg" alt="School" class="mx-auto w-64 h-40 rounded-lg hover:scale-105 transition duration-500">
+                <p class="text-lg text-gray-400 mt-4">[J.M.J English medium school] - High School Qualification -- 10 class pass</p>
+            </div>
+            <div>
+                <img src="https://res.cloudinary.com/dhjktmlhs/image/upload/v1741708559/college_photo_wmfbcx.jpg" alt="Diploma College" class="mx-auto w-64 h-40 rounded-lg hover:scale-105 transition duration-500">
+                <p class="text-lg text-gray-400 mt-4">[Thandhra papayara polythenic college ] - Diploma in Electronic and communication engineering percentage 85%</p>
+            </div>
+            <div>
+                <img src="https://res.cloudinary.com/dhjktmlhs/image/upload/v1741708892/btech_photo_dhdbsi.jpg" alt="B.Tech College" class="mx-auto w-64 h-40 rounded-lg hover:scale-105 transition duration-500">
+                <p class="text-lg text-gray-400 mt-4">[visakha institute of engineering and technology] - B.Tech in 2nd year cyber security</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-24 text-center bg-gray-900 min-h-screen">
+        <h2 class="text-4xl font-bold text-white">Contact</h2>
+        <p class="mt-4 text-gray-400">Email: <a href="mailto:your@email.com" class="text-red-500">your@email.com</a></p>
+        <p class="text-gray-400">Phone: [8374015995]</p>
+    </section>
+    
+</body>
+</html>
