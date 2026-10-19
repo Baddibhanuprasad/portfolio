@@ -1,9 +1,0 @@
-{
-  "name": "bhanu-portfolio",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "node server.js",
-    "build": "rm -rf dist && mkdir -p dist && cp index.html styles.css script.js manus-routes.json dist/ && cp -f app.config.ts dist/app.config.ts"
-  }
-}
